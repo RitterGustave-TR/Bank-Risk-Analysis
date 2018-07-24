@@ -21,4 +21,8 @@
 <p> This exploration is an exercise for the Home Credit Default Risk competition on Kaggle sponsored by Home Credit Group. </p>
 <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Kaggle_logo.png/400px-Kaggle_logo.png"> 
 <img src= "https://image.pitchbook.com/rTjD6D3GbnaTrBrOxkBswvYMfGU1503928190520_200x200">
-## MORE STUFF
+## Exploratory Analysis to Unviel Feature relationships to Target.
+
+## Create Machine Learning Model
+
+## Finetune Model to Increase Accuracy 
