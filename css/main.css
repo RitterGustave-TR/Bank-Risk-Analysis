@@ -1467,10 +1467,16 @@ ul.portfolioContainer li:hover span.hoverBox .linKed{
 		padding:0 0 40px 0;
 	}
 	
-	.nameError,
-	.emailError{
-		left:0px;
-		top:0px;
-		
-	}
+
+}
+
+
+/* Separately edited code MADE BY RITTER/TIFFANY */
+
+#LR{
+    background-color: white;
+}
+
+#MLP{
+    background-color: white;
 }
