@@ -133,7 +133,7 @@
             <div class="row">
                 <div class="col-md-12">
                  <div class="heading">
-                  <h2>Exploratory Analysis</h2>
+                  <h5>Exploratory Analysis</h5>
                     <h3>
                         Here we explore our dataset and find out what general ideas and ineferences we can about the dataset. It's extremely beneficial to gain knowldge about the data you're working with in order to gain somewhat of a domain knowledge. This will help us decide which variables to pick for our machine learning model to learn. Variables more related to the target will yield better learning/predictive results
                     </h3>
@@ -183,7 +183,7 @@
             </div>
                 <h4> 
                     Herein we define a function that that allows us to take a look at the missing values within the dataframe.
-                    We must decide if the model would benefit more from either foregoing the feature all together or creato impute the data.
+                    This is beneficial as we are to make an informed decision regarding the missing data to decide if the model would stand to benefit from either foregoing the feature altogether or to impute the data.
                 </h4>
 
             </div>
@@ -208,68 +208,119 @@
                   </div>
 
 
-
                       <div class="col-md-4">
                           <img src="./images/missing_data.JPG" alt="">
                       </div>
                       <div class="col-md-8 align-middle">
-                          <h1 class="text-center align-middle"> Results of the function </h1>
                           <h4 >
                               The results of the function show we are missing over half of our data in certain columns.
                               The machine learning library we are using does not accept NaN values to be fed into the
                               machine learning algorithm. Therefore we must choose what to do with the missing data at runtime.
+                              The approach taken to resolve the missing data hurdle was to impute data using a median strategy. 
+                              This allows us to get a good sense for the feautures relevance to the target.
                           </h4>
                       </div>
                   </div>
 
+<!-- Target Balance-->
 
+<div class="row">
+        <div class="col-md-12">
+        <div class="heading">
+             
+            <h2>
+
+            </h2>
+            <br></br>
+            <h2>
+              Target Balance
+              <br></br>
+            </h2>
+
+        </div>
+        </div>
                   <div class="row" style="margin-bottom: 40px;">
                       <div class="col-md-4">
                           <img src="./images/abilitytopay.JPG" alt="">
                       </div>
                       <div class="col-md-8 align-middle">
-                          <h1 class="text-center align-middle"> Target Balance </h1>
-                          <h3 class="text-center align-middle">
-                              In our case it's helpful to know the ratio of those who default vs those who don't simply because
-                              it will allow us to look at our machine learning models tabular data and determine if it's a decent interpretation
-                          </h3>
+                          <h4>
+                              In our case it is helpful to know the ratio of those who default versus those who do not simply because
+                              it will allow us to look at our machine learning models tabular data and determine if it is an apropriate interpretation.
+                          </h4>
                       </div>
                   </div>
 
+
+<!-- Correllation !!!!!!!!!!!!!!-->
+<div class="row">
+        <div class="col-md-12">
+         <div class="heading">
+             
+        <h2>
+
+        </h2>
+        <br></br>
+          <h2>
+              Correlation
+              <br></br>
+          </h2>
+
+
                   <div class="row">
                           <div class="row">
-                            <h1 class="text-center">Correlation</h1>
                               <div class="col-md-8">
                                 <pre>
 correlations = apptrain.corr()['TARGET'].sort_values()
 print('Top 15 positive correlations', correlations.tail(15))
 print('Top 15 negative correlations', correlations.head(15))
                                 </pre>
-                                <p class="text-center">Using the above code yields the following results</p>
+                                <h4 class="text-center">Using the above code yields the following results</h4>
                                   <img src="./images/correlations.JPG" alt="">
                               </div>
                               <div class="col-md-4">
-                                  <h3 class="py-auto">The correlation will give us a nice starting point as to which features to look at.
-                                  Ranges from -1 to 1 indicate either a strongly positive correlation or negative correlation.
-                                  Either positive or negative strength will be good for a machine learning model, however this makes a very
+                                  <h7>The correlation serves as a starting point that informs us which features to focus on.
+                                  The range, -1 to 1, indicates either a strongly positive  or negative correlation, a strong correlation is good for a machine learning model as it is indicative of a possible relationship in the data, however this makes a very
                                   large assumption that the data is linearly correlaed which may not be the case.
 
                                   We can see from the low numbers, that we do not have a strong linear correlation. This is stil helpful in selecting
                                   features that have an extremely negligible correlation.
-                                  </h3>
+                                  </h7>
                               </div>
                           </div>
                   </div>
 
+
+
+<!-- FAILURE TO REPAY-->
+<div class="row">
+        <div class="col-md-12">
+         <div class="heading">
+             
+        <h2>
+
+        </h2>
+        <br></br>
+          <h2>
+              Age Dependent Analysis
+              <br></br>
+          </h2>
+        </div>
+        </div>
+          
+        
               <div class="row" style="margin-bottom: 40px;margin-top: 40px;">
-                  <div class="col-md-12">
-                      <h1 class="text-center">Failure to repay binned by age</h1>
-                      <div class="text-center">
+                 <div class="col-md-8">
+                      <div >
                           <img src="./images/agesbinned.JPG" alt="">
                       </div>
-                      <div>
-                        <h3 class="text-center">Age as a variable can be closely related to the other features, we must be careful to avoid collinearity as that will add noise
-                          to our machine learning model. </h3>
+                </div>
+
+
+                      <div class ="col-md-4">
+                        <h4>Here we categorized different age groups and created a bar graph for visual analysis. Age as a variable can be closely related to the other features, we must be careful to avoid collinearity as that will add noise
+                          to our machine learning model. 
+                        </h4>
                       </div>
                   </div>
               </div>
@@ -281,6 +332,11 @@ print('Top 15 negative correlations', correlations.head(15))
 
   <!--EXPLORATORY ANALYSIS END -->
 
+
+
+
+
+
 <!-- Feature Engineering -->
 <section id="Feature" class="Feature">
         <div class="container">
@@ -288,7 +344,7 @@ print('Top 15 negative correlations', correlations.head(15))
                 <div class="row">
                   <div class="col-md-12">
                        <div class="heading">
-                        <h2>Feature Engineering</h2>
+                        <h5>Feature Engineering</h5>
                         <h3>
                               Kaggle competitions and machine learning come down to two things: Feature Engineering, and Model tuning.
                               Efforts are spent using domain knowledge to make features that relate to the target variable. A lot of effort is also
@@ -301,28 +357,28 @@ print('Top 15 negative correlations', correlations.head(15))
                 <div class="row">
                   <div class="col-md-8">
                     <pre>
-    # Creating train data copies
-    apptrain_domain = apptrain.copy()
-    apptest_domain = apptest.copy()
+# Creating train data copies
+apptrain_domain = apptrain.copy()
+apptest_domain = apptest.copy()
     
-    #Creating variables for train data
-    apptrain_domain['CREDIT_INCOME_PERCENT'] = apptrain_domain['AMT_CREDIT'] * 100 / apptrain_domain['AMT_INCOME_TOTAL']
-    apptrain_domain['ANNUITY_INCOME_PERCENT'] = apptrain_domain['AMT_ANNUITY'] / apptrain_domain['AMT_INCOME_TOTAL']
-    apptrain_domain['CREDIT_TERM'] = apptrain_domain['AMT_ANNUITY'] / apptrain_domain['AMT_CREDIT']
-    apptrain_domain['DAYS_EMPLOYED_PERCENT'] = apptrain_domain['DAYS_EMPLOYED'] / apptrain_domain['DAYS_BIRTH']
+#Creating variables for train data
+apptrain_domain['CREDIT_INCOME_PERCENT'] = apptrain_domain['AMT_CREDIT'] * 100 / apptrain_domain['AMT_INCOME_TOTAL']
+apptrain_domain['ANNUITY_INCOME_PERCENT'] = apptrain_domain['AMT_ANNUITY'] / apptrain_domain['AMT_INCOME_TOTAL']
+apptrain_domain['CREDIT_TERM'] = apptrain_domain['AMT_ANNUITY'] / apptrain_domain['AMT_CREDIT']
+apptrain_domain['DAYS_EMPLOYED_PERCENT'] = apptrain_domain['DAYS_EMPLOYED'] / apptrain_domain['DAYS_BIRTH']
     
-    #Creating variables for test data
-    apptest_domain['CREDIT_INCOME_PERCENT'] = apptest_domain['AMT_CREDIT'] / apptest_domain['AMT_INCOME_TOTAL']
-    apptest_domain['ANNUITY_INCOME_PERCENT'] = apptest_domain['AMT_ANNUITY'] / apptest_domain['AMT_INCOME_TOTAL']
-    apptest_domain['CREDIT_TERM'] = apptest_domain['AMT_ANNUITY'] / apptest_domain['AMT_CREDIT']
-    apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / apptest_domain['DAYS_BIRTH']
+#Creating variables for test data
+apptest_domain['CREDIT_INCOME_PERCENT'] = apptest_domain['AMT_CREDIT'] / apptest_domain['AMT_INCOME_TOTAL']
+apptest_domain['ANNUITY_INCOME_PERCENT'] = apptest_domain['AMT_ANNUITY'] / apptest_domain['AMT_INCOME_TOTAL']
+apptest_domain['CREDIT_TERM'] = apptest_domain['AMT_ANNUITY'] / apptest_domain['AMT_CREDIT']
+apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / apptest_domain['DAYS_BIRTH']
                     </pre>
                   </div>
                   <div class="col-md-4">
                     <div class="heading">
                       <h2> Domain Knowledge </h2>
                     </div>
-                    <p class="text-center"> Without our limited knowledge of the Banking/Financial industry, we created features that are obvious in their correlation.
+                    <p class="text-center"> With our limited knowledge of the Banking/Financial industry, we created features that are obvious in their correlation.
                     These domain features prove to score at the top of the correlation function given by pandas </p>
                   </div>
                 </div>
@@ -331,34 +387,65 @@ print('Top 15 negative correlations', correlations.head(15))
                 <div class="row" style="margin-top: 40px; margin-bottom: 40px;">
                   <div class="col-md-12">
                     <div class="heading">
-                      <h2 class="text-center">External Sources and Their Correlation to Target</h2>
+                        <h2>
+        
+                        </h2>
+                        <br></br>
+                      <h2 class="text-center">
+                          External Sources and Their Correlation to Target
+                          <br></br>
+                        </h2>
                     </div>
                     <div class="text-center">
                       <img src="./images/correlationheatmap.JPG" alt="">
                     </div>
-                    <p class="text-center"> During exploratory data analysis, we found features that begin with EXT_SOURCE have high correlation to the target variable. We can attempt
-                    to amplify the relationship by squaring or cubing the values, as well as multiplying them with each other. In this instance we are increasing Features
-                    by using Polynomial methods.</p>
+                </br></br>
+                    <h9> 
+                        During exploratory data analysis, we found features that begin with EXT_SOURCE have high correlation to the target variable. We can attempt
+                        to amplify the relationship by squaring or cubing the values, as well as multiplying them with each other. In this instance we are increasing Features
+                        by using Polynomial methods.
+                    </h9>
                   </div>
                 </div>
     
+
+<!-- AUTOMATED FEAUTURE -->
                 <div class="row mx-auto">
-                  <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="heading">
-                      <h2>Automated Feature Engineering</h2>
+                        <h2>
+
+                        </h2>
+                        <br></br>
+                        <h2>
+                            Automated Feature Engineering
+                            <br></br>
+                        </h2>
                     </div>
-                    <div class="align-left">
-                      <img src="./images/ftes.JPG" align="right" alt="" style="width:80%; height: 60%;">
-                    </div>
-                    <div class="align-right">
-                      <p> Automated feature engineering is an excellent way to gather many features very quickly. For this task, we employed
-                        the help of a python library called Feature Tools. With feature tools, we were thereotically able to make 1700+ features by relating
-                        tables in our dataset. However, since we had hardware limitations we weren't able to collect said features as our data was already pretty sizable.
-                        If we had access to appropriate hardware, we would be able to do feature selection for 3,000,000 rows by 1,700 features</p>
-                    </div>
-                  </div>
                 </div>
-    
+            </div>
+
+            <div class="row">
+                    <div class="col-md-8">
+                         <div >
+                                <img src="./images/ftes.JPG"  alt="">
+                         </div>
+                   </div>
+   
+   
+                         <div class ="col-md-4">
+                           <h8>
+                                Automated feature engineering is an excellent way to gather many features very quickly. For this task, we employed
+                                the help of a python library called Feature Tools. With feature tools, we were thereotically able to make 1700+ features by relating
+                                tables in our dataset. However, since we had hardware limitations we weren't able to collect said features as our data was already pretty sizable.
+                                If we had access to appropriate hardware, we would be able to do feature selection for 3,000,000 rows by 1,700 features                         
+                           </h8>
+                         </div>
+                     </div>
+                 </div>
+   
+    <br>
+                </br>
     
     
         </div>
@@ -370,125 +457,149 @@ print('Top 15 negative correlations', correlations.head(15))
 
   <!--LOGISTIC REGRESSION MODEL START-->
 
-    <section class="LR" id="LR">
-    <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="heading">
-                        <h2>Logistic Regression Model</h2>
-                        <h3>Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.
-                        </h3>
+  <section class="LR" id="LR">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="heading">
+                            <h5>
+
+                                Logistic Regression Model
+                            </h5>
+                            <h3>Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.
+                            </h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class= "Display">
-                            <img src = "./images/LRpic.jpg">
+    
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class= "Display">
+                                <img src = "./images/LRpic.jpg">
+                        </div>
+                        <br></br>
                     </div>
-                    <br></br>
+
+                    <div class="col-md-8">
+                        <div>
+                            <h7>
+                                Logistic regression is a machine learning model used to make predictions according to linear function of the input features.
+                                It can be used for both regression and classification, herein it is being utilized as a classifier.
+                            </h7>
+                        </div>
                 </div>
-                <div class="col-md-6">
-                    <div>
-                        <h3>
-                                Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
-                        </h3>
-                    </div>
-            </div>
-            <br></br>
-
-
-
-                <!-- MODEL TUNING-->
-
-                <div class="container">
-                        <div class="row">
+                <br></br>
+    
+    
+    
+                    <!-- MODEL TUNING-->
+    
+                    <div class="row mx-auto">
                             <div class="col-md-12">
                                 <div class="heading">
-                                    <h2>Model Tuning</h2>
-                                    <h3>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
+                                    <h2>
             
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class= "Display">
-                                    <pre>
-# missing value check
-# Define function
-def check_missing_value(df):
-# Returns how many values are missing in each column
-missing_values = df.isnull().sum()
-# Percentage
-missing_values_percent = 100 * missing_values / len(df)
-# Table
-missing_values_table = pd.concat([missing_values, missing_values_percent], axis=1)
-# renaming columns
-missing_value_table_renamed_columns = missing_values_table.rename( columns={0: 'Missing values', 1: '% of total values'})
-# return summary info
-return missing_value_table_renamed_columns
-</pre>
+                                    </h2>
+                                    <br></br>
+                                    <h2>
+                                        Model Tuning
+                                        <br></br>
+                                    </h2>
                                 </div>
-                                <br></br>
                             </div>
-                            <div class="col-md-6">
-                                <div>
-                                    <h3>
-                                            Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
-                                    </h3>
-                                </div>
                         </div>
-
-                    <!-- KAGGLE SCORE-->
-
-                    <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="heading">
-                                        <h2>Kaggle Score</h2>
+                                       
                                         <h3>
+                                          For our logistic regression model, in order to improve generalization performance, we opted for a strong regularization parameter.
+                                          Since that parameter is stronger the lower the number (inverse) we use .0001 in order to prevent overfitting.
                                         </h3>
                                     </div>
                                 </div>
                             </div>
-                
+    
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class= "Display">
                                         <pre>
-IN HERE PUT IN IMAGE OF KAGGLE SCORE
-                                        </pre>
+    from sklearn.linear_model import LogisticRegression
+    
+      # Develop model with parameters
+    logistic_regression = LogisticRegression(C=0.0001, verbose=2, n_jobs=-1)
+    
+      #train the model by giving it the data
+    logistic_regression.fit(training_data_scaled, train_labels)
+    </pre>
                                     </div>
                                     <br></br>
                                 </div>
                                 <div class="col-md-6">
                                     <div>
-                                        <h3>
-                                            OUR KAGGLE SCORE              
-                                        </h3>
+                                        <h6>
+                                            The default parameters given to us were a good fit for our model to be tuned with.
+                                            for regularization, Scikit learn defaults to L2 which does not assume only a few features are important.
+                                            Since we have a large dataset, and we know more than a few features will be relevant to our target variable,
+                                            the default parameter for regularization is sufficient. It is hard to visualization a logistic regularization model that has
+                                            more than 2 dimensions of features, but with our model, we're able to apply linear many features as so: y = w[0] * x[0] + w[n] * x[n] + b
+                                        </h6>
                                     </div>
                             </div>
-
-
-    </div>  
-    </section>
+    
+                        <!-- KAGGLE SCORE-->
+    
+                        <div class="row mx-auto">
+                                <div class="col-md-12">
+                                    <div class="heading">
+                                        <h2>
+                
+                                        </h2>
+                                        <br></br>
+                                        <h2>
+                                            Kaggle Score
+                                            <br></br>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+    
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class= "Display">
+                                          <img src="./images/kagglelogregscores.JPG" alt="">
+                                        </div>
+                                        <br></br>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div>
+                                            <h9>
+                                                We submitted two models using logistic regression. Of these two models, one was submitted untuned and with limited feature engineering.
+                                                The other we submitted tuned and using features that were engineered manually and selected via Random Forest feature importance.
+                                            </h9>
+                                        </div>
+                                    </div>
+                              </div>
+                            </div>
+    
+    
+    
+        </div>
+        </section>
     
   <!--LR END  !!!!!!!!!!!-->
 
 
 
 
- <!--RANDOM FOREST START-->
-    <section class="RF" id="RF">
+<!--RANDOM FOREST START-->
+<!--RANDOM FOREST START-->
+  <section class="RF" id="RF">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
                         <h2>Random Forest</h2>
-                        <h3>Before creating our machine ywada yadayay</h3>
+                        <h3>Random Forest is a great classifier to use in this particular instance. It is powerful and widely implemented
+                           and with default settings performs well due to the ability to have many trees in the forest.
+                           Having many trees in the forest prevents overfitting since some trees will have the same data.</h3>
                     </div>
                 </div>
             </div>
@@ -498,7 +609,11 @@ IN HERE PUT IN IMAGE OF KAGGLE SCORE
                     <div class="col-md-6">
                         <div>
                             <h3>
-                                PUT IN WORDS ABOUT EHAT RANDOM FOREST MODELS DO
+                                Random forests are great classifiers. They are comprised of an ensemble of Decision Trees, hence the name
+                                "Random Forest". The Random part of the name comes from the fact that that it searches for the best subset
+                                of features, meaning only a random subset of the features is taken into a consideration. A great quality of
+                                Random Forest that we took advantage of for other models is feature importance. We took what the forest considered
+                                important features and fed them back into the algorithm, as well as the Logistic Regression and MLP Neural Net models.
                             </h3>
                         </div>
                     </div>
@@ -510,9 +625,9 @@ IN HERE PUT IN IMAGE OF KAGGLE SCORE
                     </div>
             </div>
 
-    
+
                 <!-- Model Tuning-->
-    
+
                 <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -523,20 +638,26 @@ IN HERE PUT IN IMAGE OF KAGGLE SCORE
                                 </div>
                             </div>
                         </div>
-            
+
 
                         <div class="row">
                                 <div class="col-md-6">
                                     <div>
                                         <h3>
-                                            BLANK WAS DONE TO TUNE THE MODEL.
+                                            For tuning the random forest, n_estimators was our biggest friend, and enemy. Increasing n_estimators increases the
+                                            number of trees in the forest. This is beneficial to prevent the overfitting that happens in deep decision trees, however,
+                                            computation time greatly increases. for our i7-4790k it took about 90 minutes to calculate 10000 trees with n_jobs parameter set to -1
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class= "Display">
                                         <pre>
-INPUT CODE HERE
+from sklearn.ensemble import RandomForestClassifier
+
+# Declare the model, tune parameters, fit data
+Random_Forest = RandomForestClassifier(n_estimators = 1000, verbose = 1, n_jobs = -1, max_features = 'auto')
+Random_Forest.fit(training_data, train_labels)
                                         </pre>>
                                     </div>
                                     <br></br>
@@ -555,31 +676,29 @@ INPUT CODE HERE
                                 </div>
                             </div>
                         </div>
-            
+
                         <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div>
                                         <h3>
-                                            WE GOT A SCORE OF BLANK WHICH WAS BLANK WE THINK THIS IS BC BOAKN.
+                                            Our Random Forest model scored a high default of .678 with just the base features and very few trees. We strongly
+                                            believe that if better hardware was available we could increase this score with minimal feature engineering.
                                         </h3>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <div class= "Display">
-                                        <pre>
-input photo here
-                                        </pre>
+                                        <img src="./images/kagglerfscores.jpg" alt="">
                                     </div>
                                     <br></br>
                                 </div>
                         </div>
 
-                        
 
 
-        </div>  
+
+        </div>
         </section>
-
 
 
 
@@ -591,13 +710,14 @@ input photo here
 
 
   <!--MLP !!!!!!!!!!!!!!!!!-->
-    <section class="MLP" id="MLP">
+ <!--MLP !!!!!!!!!!!!!!!!!-->
+ <section class="MLP" id="MLP">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
                         <h2>Multilayer Perceptron Neural Network</h2>
-                        <h3>Before creating our machine ywada yadayay</h3>
+                        <h3>The Multilayer Perceptron Neural Network is a part of Scikit Learns neural network library</h3>
                     </div>
                 </div>
             </div>
@@ -606,23 +726,25 @@ input photo here
             <div class="row">
                     <div class="col-md-6">
                         <div class= "Display">
-                                <img src = "./images/LRpic.jpg">
+                                <img src = "./images/neuralnetwork.jpg">
                         </div>
                         <br></br>
                     </div>
                     <div class="col-md-6">
                         <div>
                             <h3>
-                                    Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                              The multilayer perceptron neural network is efficient on large datasets, can build very complex models, and has the most parameters for tuning.
+                              Having so many parameters does mean there's more chance for a bad configuration. Using this model we had to take scale into account, and although
+                              we believe random forest is our strongest model, the Multilayer Perceptron Neural Network does boast a high base score.
                             </h3>
                         </div>
                 </div>
                 <br></br>
-    
-    
-    
+
+
+
                     <!-- MODEL TUNING-->
-    
+
                     <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
@@ -633,24 +755,26 @@ input photo here
                                     </div>
                                 </div>
                             </div>
-                
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class= "Display">
                                         <pre>
-    # missing value check
-    # Define function
-    def check_missing_value(df):
-    # Returns how many values are missing in each column
-    missing_values = df.isnull().sum()
-    # Percentage
-    missing_values_percent = 100 * missing_values / len(df)
-    # Table
-    missing_values_table = pd.concat([missing_values, missing_values_percent], axis=1)
-    # renaming columns
-    missing_value_table_renamed_columns = missing_values_table.rename( columns={0: 'Missing values', 1: '% of total values'})
-    # return summary info
-    return missing_value_table_renamed_columns
+from sklearn.preprocessing import Imputer, MinMaxScaler
+imputer = Imputer(strategy = 'median')
+
+fe_training_data = imputer.fit_transform(fe_training_data)
+fe_testing_data = imputer.transform(fe_testing_data)
+
+scaler = MinMaxScaler(feature_range = (0,1))
+scaler.fit(fe_training_data)
+fe_training_data = scaler.transform(fe_training_data)
+fe_testing_data = scaler.transform(fe_testing_data)
+
+from sklearn.neural_network import MLPClassifier
+
+mlp = MLPClassifier(activation='relu', learning_rate='adaptive', max_iter=1000, verbose=True)
+mlp.fit(fe_training_data, train_labels)
     </pre>
                                     </div>
                                     <br></br>
@@ -658,13 +782,16 @@ input photo here
                                 <div class="col-md-6">
                                     <div>
                                         <h3>
-                                                Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                                          To tune our Neural Network, we chose 1000 iterations, although we chose many iterations training loss did not improve significantly
+                                          over 2 epochs and so training was cut short. we chose rectified linear units as our acivation function since we scaled our data from
+                                          zero to one, this function made sense. Our learning rate was set to adaptive simply because it self monitors the training to be more or less
+                                          aggresive based on training loss.
                                         </h3>
                                     </div>
                             </div>
-    
+
                         <!-- KAGGLE SCORE-->
-    
+
                         <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -675,26 +802,26 @@ input photo here
                                         </div>
                                     </div>
                                 </div>
-                    
+
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-8">
                                         <div class= "Display">
-                                            <pre>
-    IN HERE PUT IN IMAGE OF KAGGLE SCORE
-                                            </pre>
+                                          <img src="images/kagglennscore.JPG" alt="">
                                         </div>
                                         <br></br>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div>
                                             <h3>
-                                                OUR KAGGLE SCORE              
+                                                With feature engineering, the MLP Neural Network gave us our highest kaggle public score. This is not surprising due to the fact
+                                                that we had so many feature and our observations were complex. However, we still believe that with even more feature engineering,
+                                                and better hardware, Random Forest would edge out the Neural Network.
                                             </h3>
                                         </div>
                                 </div>
-    
-    
-        </div>  
+
+
+        </div>
         </section>
 
 

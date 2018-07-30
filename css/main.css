@@ -117,17 +117,54 @@ h3{
 }
 h4{
 	font-family: 'Montserrat', sans-serif;
-	font-size:21px;
-	line-height:40px;
+	font-size:20px;
+	line-height:45px;
 	padding-bottom:10px;
 	font-weight:400;
 	margin:0px;
 }
 h5{
 	font-family: 'Montserrat', sans-serif;
-	font-size:17px;
+	font-size:30px;
 	color:#372d38;
-	line-height:24px;
+	line-height:57px;
+	padding-top: 15px;
+	padding-bottom:10px;
+	text-transform:uppercase;
+	font-weight:400;
+	margin:0px;
+}
+
+h6{
+	font-family: 'Montserrat', sans-serif;
+	font-size:17px;
+	line-height:20px;
+	padding-bottom:10px;
+	font-weight:400;
+	margin:0px;
+}
+h7{
+	font-family: 'Montserrat', sans-serif;
+	font-size:20px;
+	line-height:35px;
+	padding-bottom:10px;
+	font-weight:400;
+	margin:0px;
+}
+h8{
+	font-family: 'Montserrat', sans-serif;
+	font-size:20px;
+	line-height:20px;
+	padding-bottom:10px;
+	font-weight:400;
+	margin:0px;
+}
+
+
+h9 {
+	font-family: 'Montserrat', sans-serif;
+	font-size:20px;
+	line-height:50px;
 	padding-bottom:10px;
 	font-weight:400;
 	margin:0px;
