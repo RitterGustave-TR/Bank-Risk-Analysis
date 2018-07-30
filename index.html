@@ -130,23 +130,32 @@
 <section id="Explore" class="Explore" style="margin-bottom: 40px;">
         <div class="container">
 
-          <div class="row">
-              <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
                  <div class="heading">
                   <h2>Exploratory Analysis</h2>
-                  <p>Here we explore our dataset and find out what we can about the dataset in general.
-                                        It's extremely beneficial to gain knowldge about the data you're working with in order to gain
-                                      somewhat of a domain knowledge. This will help us decide which variables to pick for our machine learning
-                                         model to learn. Variables more related to the target will yield better
-                                        learning/predictive results
-                                  </p>
+                    <h3>
+                        Here we explore our dataset and find out what general ideas and ineferences we can about the dataset. It's extremely beneficial to gain knowldge about the data you're working with in order to gain somewhat of a domain knowledge. This will help us decide which variables to pick for our machine learning model to learn. Variables more related to the target will yield better learning/predictive results
+                    </h3>
+                    <h2>
+                         
+                    </h2>
+                    <br></br>
+                    <h2>
+                            Defining a function that will find missing values
+                            <br></br>
+                    </h2>
                  </div>
+                <div>
 
-                               <div>
+            </div>
 
-  <h1 class="text-center">Defining a function that will find missing values</h1>
-  <pre>
-      # missing value check
+            <!-- FINDING MISSING VALUES-->
+
+            <div class="row">
+                <div class="col-md-8">
+<pre>
+# MISSING VALUE CHECK
   # Define function
   def check_missing_value(df):
       # Returns how many values are missing in each column
@@ -160,36 +169,56 @@
       # return summary info
       return missing_value_table_renamed_columns
 
-
-
   # Create a dataframe using the previously called function to explain the missing data
   expl_missing_values_df = check_missing_value(apptrain)
-
 
   # Creating a new dataframe called mvdf that shows the amount of missing values and the percentage and sorts it.
   mvdf = expl_missing_values_df.loc[~(expl_missing_values_df==0).all(axis=1)]
   mvdf.sort_values(by=['% of total values'], ascending=False).head(30)
-  </pre>
+  </pre>               
+                </div>
 
-                               </div>
-                               <h3 class="text-center"> Above we define a function that that will allow us to take a look at a dataframes missing values.
-                               This is important for deciding how this will affect the machine learning model. We can choose to forego using the feature altogether,
-                                or we can choose to impute data using a specific strategy</h3>
-              </div>
+
+            <div class="col-md-4">
+            </div>
+                <h4> 
+                    Herein we define a function that that allows us to take a look at the missing values within the dataframe.
+                    We must decide if the model would benefit more from either foregoing the feature all together or creato impute the data.
+                </h4>
+
+            </div>
 
           </div>
+          <!-- RESULTS OF THE FUNCTION-->
 
-                  <div class="row" style="margin-bottom: 40px; margin-top: 40px;">
+          <div class="row">
+                <div class="col-md-12">
+                 <div class="heading">
+                     
+                <h2>
+
+                </h2>
+                <br></br>
+                  <h2>
+                      Function Results
+                      <br></br>
+                  </h2>
+
+                  </div>
+                  </div>
+
+
+
                       <div class="col-md-4">
                           <img src="./images/missing_data.JPG" alt="">
                       </div>
                       <div class="col-md-8 align-middle">
                           <h1 class="text-center align-middle"> Results of the function </h1>
-                          <h3 class="text-center align-middle">
+                          <h4 >
                               The results of the function show we are missing over half of our data in certain columns.
                               The machine learning library we are using does not accept NaN values to be fed into the
                               machine learning algorithm. Therefore we must choose what to do with the missing data at runtime.
-                          </h3>
+                          </h4>
                       </div>
                   </div>
 
@@ -253,27 +282,91 @@ print('Top 15 negative correlations', correlations.head(15))
   <!--EXPLORATORY ANALYSIS END -->
 
 <!-- Feature Engineering -->
-    <section id="Feature" class="Feature">
-    <div class="container">
-
-            <div class="row">
-            <div class="col-md-12">
-                 <div class="heading">
-                  <h2>Feature Engineering</h2>
-                  <h3>
-                        words about feature engineering
-                  </h3>
-                 </div>
-            </div>
-            </div>
-
-
-
-
-
-    </div>  
-    </section>
+<section id="Feature" class="Feature">
+        <div class="container">
+    
+                <div class="row">
+                  <div class="col-md-12">
+                       <div class="heading">
+                        <h2>Feature Engineering</h2>
+                        <h3>
+                              Kaggle competitions and machine learning come down to two things: Feature Engineering, and Model tuning.
+                              Efforts are spent using domain knowledge to make features that relate to the target variable. A lot of effort is also
+                              spent discarding features that have low correlation to prevent overfitting.
+                        </h3>
+                       </div>
+                  </div>
+                </div>
+    
+                <div class="row">
+                  <div class="col-md-8">
+                    <pre>
+    # Creating train data copies
+    apptrain_domain = apptrain.copy()
+    apptest_domain = apptest.copy()
+    
+    #Creating variables for train data
+    apptrain_domain['CREDIT_INCOME_PERCENT'] = apptrain_domain['AMT_CREDIT'] * 100 / apptrain_domain['AMT_INCOME_TOTAL']
+    apptrain_domain['ANNUITY_INCOME_PERCENT'] = apptrain_domain['AMT_ANNUITY'] / apptrain_domain['AMT_INCOME_TOTAL']
+    apptrain_domain['CREDIT_TERM'] = apptrain_domain['AMT_ANNUITY'] / apptrain_domain['AMT_CREDIT']
+    apptrain_domain['DAYS_EMPLOYED_PERCENT'] = apptrain_domain['DAYS_EMPLOYED'] / apptrain_domain['DAYS_BIRTH']
+    
+    #Creating variables for test data
+    apptest_domain['CREDIT_INCOME_PERCENT'] = apptest_domain['AMT_CREDIT'] / apptest_domain['AMT_INCOME_TOTAL']
+    apptest_domain['ANNUITY_INCOME_PERCENT'] = apptest_domain['AMT_ANNUITY'] / apptest_domain['AMT_INCOME_TOTAL']
+    apptest_domain['CREDIT_TERM'] = apptest_domain['AMT_ANNUITY'] / apptest_domain['AMT_CREDIT']
+    apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / apptest_domain['DAYS_BIRTH']
+                    </pre>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="heading">
+                      <h2> Domain Knowledge </h2>
+                    </div>
+                    <p class="text-center"> Without our limited knowledge of the Banking/Financial industry, we created features that are obvious in their correlation.
+                    These domain features prove to score at the top of the correlation function given by pandas </p>
+                  </div>
+                </div>
+    
+    
+                <div class="row" style="margin-top: 40px; margin-bottom: 40px;">
+                  <div class="col-md-12">
+                    <div class="heading">
+                      <h2 class="text-center">External Sources and Their Correlation to Target</h2>
+                    </div>
+                    <div class="text-center">
+                      <img src="./images/correlationheatmap.JPG" alt="">
+                    </div>
+                    <p class="text-center"> During exploratory data analysis, we found features that begin with EXT_SOURCE have high correlation to the target variable. We can attempt
+                    to amplify the relationship by squaring or cubing the values, as well as multiplying them with each other. In this instance we are increasing Features
+                    by using Polynomial methods.</p>
+                  </div>
+                </div>
+    
+                <div class="row mx-auto">
+                  <div class="col-md-10">
+                    <div class="heading">
+                      <h2>Automated Feature Engineering</h2>
+                    </div>
+                    <div class="align-left">
+                      <img src="./images/ftes.JPG" align="right" alt="" style="width:80%; height: 60%;">
+                    </div>
+                    <div class="align-right">
+                      <p> Automated feature engineering is an excellent way to gather many features very quickly. For this task, we employed
+                        the help of a python library called Feature Tools. With feature tools, we were thereotically able to make 1700+ features by relating
+                        tables in our dataset. However, since we had hardware limitations we weren't able to collect said features as our data was already pretty sizable.
+                        If we had access to appropriate hardware, we would be able to do feature selection for 3,000,000 rows by 1,700 features</p>
+                    </div>
+                  </div>
+                </div>
+    
+    
+    
+        </div>
+        </section>
 <!--Feature Eng END -->
+
+
+
 
   <!--LOGISTIC REGRESSION MODEL START-->
 
@@ -292,7 +385,7 @@ print('Top 15 negative correlations', correlations.head(15))
             <div class="row">
                 <div class="col-md-6">
                     <div class= "Display">
-                            <img src = "/images/LRpic.jpg">
+                            <img src = "./images/LRpic.jpg">
                     </div>
                     <br></br>
                 </div>
@@ -305,55 +398,15 @@ print('Top 15 negative correlations', correlations.head(15))
             </div>
             <br></br>
 
-            <!-- Prepare data-->
 
-            <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="heading">
-                                <h2>Data Preparation for model</h2>
-                                <h3>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class= "Display">
-                                    <pre>
-# missing value check
-# Define function
-def check_missing_value(df):
-# Returns how many values are missing in each column
-missing_values = df.isnull().sum()
-# Percentage
-missing_values_percent = 100 * missing_values / len(df)
-# Table
-missing_values_table = pd.concat([missing_values, missing_values_percent], axis=1)
-# renaming columns
-missing_value_table_renamed_columns = missing_values_table.rename( columns={0: 'Missing values', 1: '% of total values'})
-# return summary info
-return missing_value_table_renamed_columns
-                                          
- </pre>
-                            </div>
-                            <br></br>
-                        </div>
-                        <div class="col-md-6">
-                            <div>
-                                <h3>
-                                        Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
-                                </h3>
-                            </div>
-                    </div>
-                <!-- LR Base Feature-->
+
+                <!-- MODEL TUNING-->
 
                 <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="heading">
-                                    <h2>Logistic Regression Base Features</h2>
+                                    <h2>Model Tuning</h2>
                                     <h3>
                                     </h3>
                                 </div>
@@ -389,13 +442,13 @@ return missing_value_table_renamed_columns
                                 </div>
                         </div>
 
-                    <!-- Manually Engineered features-->
+                    <!-- KAGGLE SCORE-->
 
                     <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="heading">
-                                        <h2>Manually Engineered Features</h2>
+                                        <h2>Kaggle Score</h2>
                                         <h3>
                                         </h3>
                                     </div>
@@ -406,19 +459,7 @@ return missing_value_table_renamed_columns
                                 <div class="col-md-6">
                                     <div class= "Display">
                                         <pre>
-# missing value check
-# Define function
-def check_missing_value(df):
-# Returns how many values are missing in each column
-missing_values = df.isnull().sum()
-# Percentage
-missing_values_percent = 100 * missing_values / len(df)
-# Table
-missing_values_table = pd.concat([missing_values, missing_values_percent], axis=1)
-# renaming columns
-missing_value_table_renamed_columns = missing_values_table.rename( columns={0: 'Missing values', 1: '% of total values'})
-# return summary info
-return missing_value_table_renamed_columns
+IN HERE PUT IN IMAGE OF KAGGLE SCORE
                                         </pre>
                                     </div>
                                     <br></br>
@@ -426,7 +467,7 @@ return missing_value_table_renamed_columns
                                 <div class="col-md-6">
                                     <div>
                                         <h3>
-                                                Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                                            OUR KAGGLE SCORE              
                                         </h3>
                                     </div>
                             </div>
@@ -440,7 +481,7 @@ return missing_value_table_renamed_columns
 
 
 
- <!--RANDOME FOREST START-->
+ <!--RANDOM FOREST START-->
     <section class="RF" id="RF">
         <div class="container">
             <div class="row">
@@ -457,26 +498,26 @@ return missing_value_table_renamed_columns
                     <div class="col-md-6">
                         <div>
                             <h3>
-                                HELLOOO SO MANY CATS
+                                PUT IN WORDS ABOUT EHAT RANDOM FOREST MODELS DO
                             </h3>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class= "Display">
-                            <img src = "/images/LRpic.jpg">
+                                <img src = "./images/LRpic.jpg">
                         </div>
                         <br></br>
                     </div>
             </div>
 
     
-                <!-- Prepare data-->
+                <!-- Model Tuning-->
     
                 <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="heading">
-                                    <h2>Data Preparation for model</h2>
+                                    <h2>Model Tuning</h2>
                                     <h3>
                                     </h3>
                                 </div>
@@ -488,25 +529,27 @@ return missing_value_table_renamed_columns
                                 <div class="col-md-6">
                                     <div>
                                         <h3>
-                                            HELLOOO SO MANY CATS
+                                            BLANK WAS DONE TO TUNE THE MODEL.
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class= "Display">
-                                        <img src = "/images/LRpic.jpg">
+                                        <pre>
+INPUT CODE HERE
+                                        </pre>>
                                     </div>
                                     <br></br>
                                 </div>
                         </div>
 
 
-                <!-- THE SECOND STEP-->
+                <!-- KAGGLE SCORE-->
                 <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="heading">
-                                    <h2>Logistic Regression Base Features</h2>
+                                    <h2>Kaggle Score</h2>
                                     <h3>
                                     </h3>
                                 </div>
@@ -517,13 +560,15 @@ return missing_value_table_renamed_columns
                                 <div class="col-md-6">
                                     <div>
                                         <h3>
-                                            HELLOOO SO MANY CATS
+                                            WE GOT A SCORE OF BLANK WHICH WAS BLANK WE THINK THIS IS BC BOAKN.
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class= "Display">
-                                        <img src = "/images/LRpic.jpg">
+                                        <pre>
+input photo here
+                                        </pre>
                                     </div>
                                     <br></br>
                                 </div>
@@ -543,6 +588,8 @@ return missing_value_table_renamed_columns
 
 
 
+
+
   <!--MLP !!!!!!!!!!!!!!!!!-->
     <section class="MLP" id="MLP">
         <div class="container">
@@ -556,39 +603,10 @@ return missing_value_table_renamed_columns
             </div>
 
 
-    <div class="row">
-            <div class="col-md-6">
-                <div class= "Display">
-                    <img src = "/images/LRpic.jpg">
-                </div>
-                <br></br>
-            </div>
-            <div class="col-md-6">
-                <div>
-                    <h3>
-                            Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
-                    </h3>
-                </div>
-        </div>
-        <br></br>
-
-        <!-- Prepare data-->
-
-        <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="heading">
-                            <h2>Data Preparation for model</h2>
-                            <h3>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="row">
+            <div class="row">
                     <div class="col-md-6">
                         <div class= "Display">
-                            <img src = "/images/LRpic.jpg">
+                                <img src = "./images/LRpic.jpg">
                         </div>
                         <br></br>
                     </div>
@@ -599,65 +617,86 @@ return missing_value_table_renamed_columns
                             </h3>
                         </div>
                 </div>
-            <!-- LR Base Feature-->
-
-            <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="heading">
-                                <h2>Logistic Regression Base Features</h2>
-                                <h3>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class= "Display">
-                                <img src = "/images/LRpic.jpg">
-                            </div>
-                            <br></br>
-                        </div>
-                        <div class="col-md-6">
-                            <div>
-                                <h3>
-                                        Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
-                                </h3>
-                            </div>
-                    </div>
-
-                <!-- Manually Engineered features-->
-
-                <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="heading">
-                                    <h2>Manually Engineered Features</h2>
-                                    <h3>
-                                    </h3>
+                <br></br>
+    
+    
+    
+                    <!-- MODEL TUNING-->
+    
+                    <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="heading">
+                                        <h2>Model Tuning</h2>
+                                        <h3>
+                                        </h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-            
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class= "Display">
-                                    <img src = "/images/LRpic.jpg">
+                
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class= "Display">
+                                        <pre>
+    # missing value check
+    # Define function
+    def check_missing_value(df):
+    # Returns how many values are missing in each column
+    missing_values = df.isnull().sum()
+    # Percentage
+    missing_values_percent = 100 * missing_values / len(df)
+    # Table
+    missing_values_table = pd.concat([missing_values, missing_values_percent], axis=1)
+    # renaming columns
+    missing_value_table_renamed_columns = missing_values_table.rename( columns={0: 'Missing values', 1: '% of total values'})
+    # return summary info
+    return missing_value_table_renamed_columns
+    </pre>
+                                    </div>
+                                    <br></br>
                                 </div>
-                                <br></br>
+                                <div class="col-md-6">
+                                    <div>
+                                        <h3>
+                                                Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                                        </h3>
+                                    </div>
                             </div>
-                            <div class="col-md-6">
-                                <div>
-                                    <h3>
-                                            Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
-                                    </h3>
+    
+                        <!-- KAGGLE SCORE-->
+    
+                        <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="heading">
+                                            <h2>Kaggle Score</h2>
+                                            <h3>
+                                            </h3>
+                                        </div>
+                                    </div>
                                 </div>
-                        </div>
+                    
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class= "Display">
+                                            <pre>
+    IN HERE PUT IN IMAGE OF KAGGLE SCORE
+                                            </pre>
+                                        </div>
+                                        <br></br>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <h3>
+                                                OUR KAGGLE SCORE              
+                                            </h3>
+                                        </div>
+                                </div>
+    
+    
+        </div>  
+        </section>
 
-
-</div>  
-</section>
 
 <!-- MLP END !!!!!!!!!!!!!-->
 
