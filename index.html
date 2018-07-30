@@ -137,7 +137,7 @@
                         Here we explore our dataset and find out what general ideas and ineferences we can about the dataset. It's extremely beneficial to gain knowldge about the data you're working with in order to gain somewhat of a domain knowledge. This will help us decide which variables to pick for our machine learning model to learn. Variables more related to the target will yield better learning/predictive results
                     </h3>
                     <h2>
-                         
+
                     </h2>
                     <br></br>
                     <h2>
@@ -174,13 +174,13 @@
   # Creating a new dataframe called mvdf that shows the amount of missing values and the percentage and sorts it.
   mvdf = expl_missing_values_df.loc[~(expl_missing_values_df==0).all(axis=1)]
   mvdf.sort_values(by=['% of total values'], ascending=False).head(30)
-  </pre>               
+  </pre>
                 </div>
 
 
             <div class="col-md-4">
             </div>
-                <h4> 
+                <h4>
                     Herein we define a function that that allows us to take a look at the missing values within the dataframe.
                     This is beneficial as we are to make an informed decision regarding the missing data to decide if the model would stand to benefit from either foregoing the feature altogether or to impute the data.
                 </h4>
@@ -193,7 +193,7 @@
           <div class="row">
                 <div class="col-md-12">
                  <div class="heading">
-                     
+
                 <h2>
 
                 </h2>
@@ -215,7 +215,7 @@
                               The results of the function show we are missing over half of our data in certain columns.
                               The machine learning library we are using does not accept NaN values to be fed into the
                               machine learning algorithm. Therefore we must choose what to do with the missing data at runtime.
-                              The approach taken to resolve the missing data hurdle was to impute data using a median strategy. 
+                              The approach taken to resolve the missing data hurdle was to impute data using a median strategy.
                               This allows us to get a good sense for the feautures relevance to the target.
                           </h4>
                       </div>
@@ -226,7 +226,7 @@
 <div class="row">
         <div class="col-md-12">
         <div class="heading">
-             
+
             <h2>
 
             </h2>
@@ -255,7 +255,7 @@
 <div class="row">
         <div class="col-md-12">
          <div class="heading">
-             
+
         <h2>
 
         </h2>
@@ -295,7 +295,7 @@ print('Top 15 negative correlations', correlations.head(15))
 <div class="row">
         <div class="col-md-12">
          <div class="heading">
-             
+
         <h2>
 
         </h2>
@@ -306,8 +306,8 @@ print('Top 15 negative correlations', correlations.head(15))
           </h2>
         </div>
         </div>
-          
-        
+
+
               <div class="row" style="margin-bottom: 40px;margin-top: 40px;">
                  <div class="col-md-8">
                       <div >
@@ -318,7 +318,7 @@ print('Top 15 negative correlations', correlations.head(15))
 
                       <div class ="col-md-4">
                         <h4>Here we categorized different age groups and created a bar graph for visual analysis. Age as a variable can be closely related to the other features, we must be careful to avoid collinearity as that will add noise
-                          to our machine learning model. 
+                          to our machine learning model.
                         </h4>
                       </div>
                   </div>
@@ -339,7 +339,7 @@ print('Top 15 negative correlations', correlations.head(15))
 <!-- Feature Engineering -->
 <section id="Feature" class="Feature">
         <div class="container">
-    
+
                 <div class="row">
                   <div class="col-md-12">
                        <div class="heading">
@@ -352,20 +352,20 @@ print('Top 15 negative correlations', correlations.head(15))
                        </div>
                   </div>
                 </div>
-    
+
                 <div class="row">
                   <div class="col-md-8">
                     <pre>
 # Creating train data copies
 apptrain_domain = apptrain.copy()
 apptest_domain = apptest.copy()
-    
+
 #Creating variables for train data
 apptrain_domain['CREDIT_INCOME_PERCENT'] = apptrain_domain['AMT_CREDIT'] * 100 / apptrain_domain['AMT_INCOME_TOTAL']
 apptrain_domain['ANNUITY_INCOME_PERCENT'] = apptrain_domain['AMT_ANNUITY'] / apptrain_domain['AMT_INCOME_TOTAL']
 apptrain_domain['CREDIT_TERM'] = apptrain_domain['AMT_ANNUITY'] / apptrain_domain['AMT_CREDIT']
 apptrain_domain['DAYS_EMPLOYED_PERCENT'] = apptrain_domain['DAYS_EMPLOYED'] / apptrain_domain['DAYS_BIRTH']
-    
+
 #Creating variables for test data
 apptest_domain['CREDIT_INCOME_PERCENT'] = apptest_domain['AMT_CREDIT'] / apptest_domain['AMT_INCOME_TOTAL']
 apptest_domain['ANNUITY_INCOME_PERCENT'] = apptest_domain['AMT_ANNUITY'] / apptest_domain['AMT_INCOME_TOTAL']
@@ -381,13 +381,13 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                     These domain features prove to score at the top of the correlation function given by pandas </p>
                   </div>
                 </div>
-    
-    
+
+
                 <div class="row" style="margin-top: 40px; margin-bottom: 40px;">
                   <div class="col-md-12">
                     <div class="heading">
                         <h2>
-        
+
                         </h2>
                         <br></br>
                       <h2 class="text-center">
@@ -399,14 +399,14 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                       <img src="./images/correlationheatmap.JPG" alt="">
                     </div>
                 </br></br>
-                    <h9> 
+                    <h9>
                         During exploratory data analysis, we found features that begin with EXT_SOURCE have high correlation to the target variable. We can attempt
                         to amplify the relationship by squaring or cubing the values, as well as multiplying them with each other. In this instance we are increasing Features
                         by using Polynomial methods.
                     </h9>
                   </div>
                 </div>
-    
+
 
 <!-- AUTOMATED FEAUTURE -->
                 <div class="row mx-auto">
@@ -430,23 +430,23 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                                 <img src="./images/ftes.JPG"  alt="">
                          </div>
                    </div>
-   
-   
+
+
                          <div class ="col-md-4">
                            <h8>
                                 Automated feature engineering is an excellent way to gather many features very quickly. For this task, we employed
                                 the help of a python library called Feature Tools. With feature tools, we were thereotically able to make 1700+ features by relating
                                 tables in our dataset. However, since we had hardware limitations we weren't able to collect said features as our data was already pretty sizable.
-                                If we had access to appropriate hardware, we would be able to do feature selection for 3,000,000 rows by 1,700 features                         
+                                If we had access to appropriate hardware, we would be able to do feature selection for 3,000,000 rows by 1,700 features
                            </h8>
                          </div>
                      </div>
                  </div>
-   
+
     <br>
                 </br>
-    
-    
+
+
         </div>
         </section>
 <!--Feature Eng END -->
@@ -470,7 +470,7 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="row">
                     <div class="col-md-4">
                         <div class= "Display">
@@ -488,16 +488,16 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                         </div>
                 </div>
                 <br></br>
-    
-    
-    
+
+
+
                     <!-- MODEL TUNING-->
-    
+
                     <div class="row mx-auto">
                             <div class="col-md-12">
                                 <div class="heading">
                                     <h2>
-            
+
                                     </h2>
                                     <br></br>
                                     <h2>
@@ -507,24 +507,24 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                                 </div>
                             </div>
                         </div>
-                                       
+
                                         <h3>
                                           For our logistic regression model, in order to improve generalization performance, we opted for a strong regularization parameter.
                                           Since that parameter is stronger the lower the number (inverse) we use .0001 in order to prevent overfitting.
                                         </h3>
                                     </div>
-                                
-                            
-    
+
+
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class= "Display">
                                         <pre>
     from sklearn.linear_model import LogisticRegression
-    
+
       # Develop model with parameters
     logistic_regression = LogisticRegression(C=0.0001, verbose=2, n_jobs=-1)
-    
+
       #train the model by giving it the data
     logistic_regression.fit(training_data_scaled, train_labels)
     </pre>
@@ -542,14 +542,14 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                                         </h6>
                                     </div>
                             </div>
-    
+
                         <!-- KAGGLE SCORE-->
-    
+
                         <div class="row mx-auto">
                                 <div class="col-md-12">
                                     <div class="heading">
                                         <h2>
-                
+
                                         </h2>
                                         <br></br>
                                         <h2>
@@ -559,7 +559,7 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                                     </div>
                                 </div>
                             </div>
-    
+
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class= "Display">
@@ -577,12 +577,12 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                                     </div>
                               </div>
                             </div>
-    
-    
+
+
         </div>
         </div>
         </section>
-    
+
   <!--LR END  !!!!!!!!!!!-->
 
 
@@ -622,7 +622,7 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                     </div>
                     <div class="col-md-6">
                         <div class= "Display">
-                                <img src = "./images/LRpic.jpg">
+                                <img src = "./images/randomforestpic.png">
                         </div>
                         <br></br>
                     </div>
