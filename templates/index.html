@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Risky Business</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+        <link href= "../static/css/style.css" rel="stylesheet" >
+        <!--D3 cdn-->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js'></script>
+        <script src='https://d3js.org/d3.v4.min.js'></script>
+
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class = "navbar navbar-expand-md navbar-light bg-warning sticky-top">
+            <div class = "container-fluid">
+                <a class = "navabar-brand" href="#"> <h2> Risky Business </h2></a>
+                <button class = "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#explore">Exploratory Analysis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#LR">Logistical Regression Model</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#RF">Random Forest Model</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#MLP">MLP Neural Network</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+
+            <!--- Jumbotron -->
+            <div class="container-fluid h-100">
+                    <div class="row jumbotron">
+                        <div class="col-9 text-center mx-auto my-auto" id= "Intro">
+                            <p class="lead"> Loans are incredibly important to the standard of living one has in the United states. Loans are taken out for anything ranging between a car, education or even a home. Personal loans are currently an increasing category of debt. With numbers of loans being taken out, the amount of loans at risk for default also rise.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+<!--- Explroatory  -->
+<div id="explore"><a href="explore"></a>
+</div>
+    <div class="container-fluid padding">
+    <div class="row padding">
+
+
+
+                <div class ="col-lg-12">
+                    <h1 class="text-center"> Exploratory Analysis</h1>
+                    <h2>Herein we analyzed the data utilizing a python notebook </h2>
+                </div>
+            
+
+
+                <div class="col-lg-6">
+                    <br>
+                    </br>
+                    <h3>
+                    Words and stuff.
+                    </h3>
+                </div>
+
+                <div class="col-lg-6">
+                    <div id='bargraph'></div>
+                    <iframe width="500" height="450" frameborder="0" scrolling="no" src="//plot.ly/~taronh/5.embed"></iframe>
+                    </iframe>
+                    </div>
+                </div>
+    </div>
+    </div>
+
+
+<br></br>
+
+        <!--- Logistical Regression Model ANALYSIS-->
+ <div id="LR"><a href="LR"></a></div>
+
+        <div class="main container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Logistic Regression Model</h3>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        
+        <!--- Random Forest Model -->
+
+<div id="RF"><a href="RF"></a></div>
+        <div class="main container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Random Forest Model</h3>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+        <!--- MLP Neural Network Model -->
+
+<div id="MLP"><a href="MLP"></a></div>
+    <div class="main container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Multilayer Perceptron Neural Network</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+        <!--- Footer -->
+        <footer>
+            <div class="container-fluid padding">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <hr class="light">
+                        <h2> &copy; Risky Business 2018</h2>
+                        </hr>
+                    </div>
+                    ]
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -32,55 +32,58 @@
 
 <!--Header start -->
 <header>
-        <!-- Navigation -->
-        <nav class = "navbar navbar-expand-md navbar-light bg-warning sticky-top">
-            <div class = "container-fluid">
-                <a class = "navabar-brand" href="#"> <h2> Risky Business </h2></a>
-                <button class = "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#explore">Exploratory Analysis</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#LR">Logistical Regression Model</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#RF">Random Forest Model</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#MLP">MLP Neural Network</a>
-                        </li>
+  	<!--menu start-->
+    <div class="menu">
+    <a href="#" class="nav-icon" id="nav-show"><i class="fa fa-bars"></i></a>
+      <div class="navbar-wrapper">
+        <div class="container">
+          <div class="navwrapper">
+            <div class="navbar navbar-inverse navbar-static-top">
+              <div class="container">
+              	<!--<div class="logo">logo</div> -->
+                <div class="navArea"><a href="#" class="closeMenu"><i class="fa fa-times"></i></a>
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                     <!-- <a class="navbar-brand" href="#">Menu</a>  --></div>
+                    <div class="navbar-collapse collapse">
+                      <ul class="nav navbar-nav">
+                        <li class="menuItem active"><a href="#wrapper">Home</a></li>
+                        <li class="menuItem"><a href="#Explore">Exploratory Analysis</a></li>
+                        <li class="menuItem"><a href="#LR">Logistic Regression Model</a></li>
+                        <li class="menuItem"><a href="#RF">Random Forest Model</a></li>
+                        <li class="menuItem"><a href="#MLP">MLP Neuro Network</a></li>
 
-                    </ul>
+                      </ul>
+                    </div>
                 </div>
-            </nav>
+              </div>
+            </div>
+          </div>
+          <!-- End Navbar -->
+
+
 
         </div>
       </div>
     </div>
     <!--menu end-->
 
+
+
     <!--banner start-->
     <div class="banner row" id="banner">
     <div class="bannerText">
-        <h1>Bank Default Analysis</h1>
+        <h1>Bank Risk Analysis</h1>
         <h3>Machine Learning Kaggle Competition</h3>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadd slides-container" style="height:100%">
         <!--background slide show start-->
         <div class="slide">
-          <img src="https://images.pexels.com/photos/910573/pexels-photo-910573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="data.png"> </div>
-        <div class="slide">
-          <img src="https://images.pexels.com/photos/534078/pexels-photo-534078.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="data.png"> </div>
-        <div class="slide">
-          <img src="https://images.pexels.com/photos/39656/staircase-spiral-architecture-interior-39656.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="data.png"> </div>
- 
+                <img src="https://images.pexels.com/photos/910573/pexels-photo-910573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="data.png"> </div>
+              <div class="slide">
+                <img src="https://images.pexels.com/photos/534078/pexels-photo-534078.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="data.png"> </div>
+              <div class="slide">
+                <img src="https://images.pexels.com/photos/39656/staircase-spiral-architecture-interior-39656.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="data.png"> </div>
           <!--background slide show end-->
       </div>
     </div>
@@ -89,147 +92,137 @@
   </header>
   <!--Header end -->
 
-<!-- -->
+
+
+
+
+
+<!-- ABOUT-->
   <section class="data" id="data">
-    <div class="container">
-      <div class="row">
-       <div class="col-md-12">
-      	<div class="heading">
-        <h2>Home Loan Defulat Competition on Kaggle </h2>
-        <br></br>
-        <h3>
-            Banks take a large risk when letting people borrow money. Personal loans are an increasing debt type whic means the risk for defualting on this risk id increasing as well. Assessing the risk for default without a credit score is difficult, so other factors may be used to determine this. For this Kaggle compeition we took the steps of: 
-        </h3>
-        <p>
-          1) Exploring the data with an exploratory notebook
-        </p>
-        <p>
-          2) Created a Logistical Regression Model
-        </p>
-        <p>
-          3) Created a Random Forest Model
-        </p>
-        <p>
-          4) Multilayer Perceptron Neural Network
-        </p>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>
-  <!--about us end-->
-
-
-
-
-
-
-
-
-
-
-<!--- Exploratory  -->
-<div id="explore"><a href="explore"></a>
-</div>
-    <div class="container-fluid padding">
-    <div class="row padding">
-
-
-
-                <div class ="col-lg-12">
-                    <h1 class="text-center"> Exploratory Analysis</h1>
-                    <h2>Herein we analyzed the data utilizing a python notebook </h2>
-                </div>
-            
-
-
-                <div class="col-lg-6">
-                    <br>
-                    </br>
-                    <h3>
-                    Words and stuff.
-                    </h3>
-                </div>
-
-                <div class="col-lg-6">
-                    <div id='bargraph'></div>
-                    <iframe width="500" height="450" frameborder="0" scrolling="no" src="//plot.ly/~taronh/5.embed"></iframe>
-                    </iframe>
-                    </div>
-                </div>
-    </div>
-    </div>
-</div>
-
-    
-  </section>
-
-
-
-
-<!-- Logistic Regression Model-->
-  <div id="LR"><a href="LR"></a></div>
-
-  <div class="main container">
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              <h3 class="panel-title">Logistic Regression Model</h3>
+        <div class="container">
+          <div class="row">
+           <div class="col-md-12">
+              <div class="heading">
+            <h2>Home Credit Default Risk Competition on Kaggle </h2>
+            <br></br>
+            <h3>
+                Banks take a large risk when letting people borrow money. Personal loans are an increasing debt type which means the risk for defualting on this risk is increasing as well. Assessing the risk for default without a credit score is difficult, so other factors such as financial and socioeconomic history may be used to determine this. For this Kaggle compeition we took the steps of:
+            </h3>
+            <p>
+              1) Exploring the data with an exploratory notebook in order to learn about the dataset.
+            </p>
+            <p>
+              2) Engineer useful features for our machine learning models by manipulating tabular data using pandas, numpy.
+            </p>
+            <p>
+              3) Creating three machine learning models: Logistic Regression, Random Forest, Multilayer Perceptron Neural Network
+            </p>
+            <p>
+              4) Using kaggle to score our models and measure progress.
+            </p>
+            </div>
           </div>
-      </div>
-  </div>
-
-
-         <!--- Random Forest Model -->
-
-<div id="RF"><a href="RF"></a></div>
-<div class="main container">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Random Forest Model</h3>
+          </div>
         </div>
-    </div>
-</div>
-</div>
+      </section>
 
 
 
-        <!--- MLP Neural Network Model -->
 
-        <div id="MLP"><a href="MLP"></a></div>
-        <div class="main container">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Multilayer Perceptron Neural Network</h3>
-                </div>
+
+
+
+
+
+  <!--Skillset start -->
+  <section id="Explore" class="Explore">
+  	<div class="container">
+    	<div class="row">
+        	<div class="col-md-12">
+               <div class="heading">
+                <h2>Exploratory Analysis</h2>
+                <h3>Before creating our machine ywada yadayay</h3>
+               </div>
             </div>
         </div>
-    </div>
+    </div>  
+  </section>
+
+
+  <!--Skillset end -->
 
 
 
+  <!--portfolio start-->
+	<section class="LR" id="LR">
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                           <div class="heading">
+                            <h2>Logistic Regression Model</h2>
+                            <h3>Before creating our machine ywada yadayay</h3>
+                           </div>
+                        </div>
+                    </div>
+                </div>  
+              </section>
 
-  <!--contact/footer start-->
-  <section class="footer" id="footer">
-            <div class="container-fluid padding">
-                <div class="row text-center">
+
+  <!--portfolio end-->
+
+ <!--about me start-->
+ <section class="RF" id="RF">
+        <div class="container">
+                <div class="row">
                     <div class="col-md-12">
-                        <hr class="light">
-                        <h2> &copy; Risky Business 2018</h2>
-                        </hr>
+                       <div class="heading">
+                        <h2>Randome Forest</h2>
+                        <h3>Before creating our machine ywada yadayay</h3>
+                       </div>
                     </div>
                 </div>
-            </div>
+            </div>  
+          </section>   
+<!-- END ABOUT-->
 
 
 
 
+  <!--MLP-->
+  <section class="MLP" id="MLP">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                       <div class="heading">
+                        <h2>Multilayer Perceptrion Neural Network</h2>
+                        <h3>Before creating our machine ywada yadayay</h3>
+                       </div>
+                    </div>
+                </div>
+            </div>  
+          </section>
+
+  </div>
+<!--wrapper end-->
+
+<!--- Footer -->
+        <footer>
+                <div class="container-fluid padding">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <hr class="light">
+                            <h2> &copy; Risky Business 2018</h2>
+                            </hr>
+                        </div>
+                        ]
+                    </div>
+                </div>
+            </footer>
 
 
 
-            
 </body>
 </html>
-
 
 
 
