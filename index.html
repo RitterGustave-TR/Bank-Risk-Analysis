@@ -1,45 +1,52 @@
 <!DOCTYPE html>
+<!-- HEAD START-->
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<!-- Metas Page details-->
-<title>Portfolio</title>
-<meta name="description" content="Tiffanys Portfolio">
-<meta name="author" content="">
-<!-- Mobile Specific Metas-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--main style-->
-<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
-<!--google font style-->
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<!--font-family: 'Metrophobic', serif;-->
-<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,600,400italic,600italic' rel='stylesheet' type='text/css'>
-<!--font-family: 'Open Sans', sans-serif;-->
-<!-- font icon css style-->
-<link rel="stylesheet" href="css/font-awesome.min.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Metas Page details-->
+    <title>Bank Risk Analysis</title>
+    <meta name="description" content="Bank Risk Analysis">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--main style-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <!--google font style-->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!--font-family: 'Metrophobic', serif;-->
+    <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,600,400italic,600italic' rel='stylesheet' type='text/css'>
+    <!--font-family: 'Open Sans', sans-serif;-->
+    <!-- font icon css style-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
+<!-- HEAD END-->
+
+
+
+
+<!-- BODY START-->
 <body>
+
 <!-- Preloader -->
-<div id="preloader">
-	<div id="status"></div>
-</div>
+    <div id="preloader">
+	    <div id="status"></div>
+    </div>
+<!-- Preloader End-->
+
 <!--wrapper start-->
 <div class="wrapper noGap" id="wrapper">
 
-
-
-
-<!--Header start -->
+<!--NAVBAR AND BANNER start -->
 <header>
-  	<!--menu start-->
+  	<!--NAVBAR PART-->
     <div class="menu">
     <a href="#" class="nav-icon" id="nav-show"><i class="fa fa-bars"></i></a>
-      <div class="navbar-wrapper">
+        <div class="navbar-wrapper">
         <div class="container">
-          <div class="navwrapper">
+        <div class="navwrapper">
             <div class="navbar navbar-inverse navbar-static-top">
-              <div class="container">
+            <div class="container">
               	<!--<div class="logo">logo</div> -->
                 <div class="navArea"><a href="#" class="closeMenu"><i class="fa fa-times"></i></a>
                     <div class="navbar-header">
@@ -49,34 +56,27 @@
                       <ul class="nav navbar-nav">
                         <li class="menuItem active"><a href="#wrapper">Home</a></li>
                         <li class="menuItem"><a href="#Explore">Exploratory Analysis</a></li>
+                        <li class="menuItem"><a href="#Feature">Feature Engineering</a></li>
                         <li class="menuItem"><a href="#LR">Logistic Regression Model</a></li>
                         <li class="menuItem"><a href="#RF">Random Forest Model</a></li>
                         <li class="menuItem"><a href="#MLP">MLP Neuro Network</a></li>
-
                       </ul>
                     </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <!-- End Navbar -->
-
-
-
+            </div>
         </div>
-      </div>
+        </div>
+        </div>
     </div>
-    <!--menu end-->
-
-
-
-    <!--banner start-->
+    <!--NAVBAR end-->
+    <!--BANNER PART-->
     <div class="banner row" id="banner">
-    <div class="bannerText">
+    <div class="bannerText" style="color: white !important">
         <h1>Bank Risk Analysis</h1>
         <h3>Machine Learning Kaggle Competition</h3>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadd slides-container" style="height:100%">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadd slides-container" style="height:100%">
         <!--background slide show start-->
         <div class="slide">
                 <img src="https://images.pexels.com/photos/910573/pexels-photo-910573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="data.png"> </div>
@@ -85,130 +85,198 @@
               <div class="slide">
                 <img src="https://images.pexels.com/photos/39656/staircase-spiral-architecture-interior-39656.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="data.png"> </div>
           <!--background slide show end-->
-      </div>
+        </div>
     </div>
     <!--banner end-->
-
-  </header>
-  <!--Header end -->
-
-
-
+</header>
+  <!--NAVBAR BANNER END -->
 
 
 
 <!-- ABOUT-->
   <section class="data" id="data">
         <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h2>Home Credit Default Risk Competition on Kaggle </h2>
+                    <br></br>
+                    <h3>
+                        Banks take a large risk when letting people borrow money. Personal loans are an increasing debt type which means the risk for defualting on this risk is increasing as well. Assessing the risk for default without a credit score is difficult, so other factors such as financial and socioeconomic history may be used to determine this. For this Kaggle compeition we took the steps of:
+                    </h3>
+                    <p>
+                      1) Exploring the data with an exploratory notebook in order to learn about the dataset.
+                    </p>
+                    <p>
+                     2) Engineer useful features for our machine learning models by manipulating tabular data using pandas, numpy.
+                    </p>
+                    <p>
+                      3) Creating three machine learning models: Logistic Regression, Random Forest, Multilayer Perceptron Neural Network
+                    </p>
+                    <p>
+                      4) Using kaggle to score our models and measure progress.
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+<!-- END ABOUT-->
+
+
+
+<!-- Exploratory Analysis -->
+<section id="Explore" class="Explore" style="margin-bottom: 40px;">
+    <div class="container">
+  
           <div class="row">
-           <div class="col-md-12">
-              <div class="heading">
-            <h2>Home Credit Default Risk Competition on Kaggle </h2>
-            <br></br>
-            <h3>
-                Banks take a large risk when letting people borrow money. Personal loans are an increasing debt type which means the risk for defualting on this risk is increasing as well. Assessing the risk for default without a credit score is difficult, so other factors such as financial and socioeconomic history may be used to determine this. For this Kaggle compeition we took the steps of:
-            </h3>
-            <p>
-              1) Exploring the data with an exploratory notebook in order to learn about the dataset.
-            </p>
-            <p>
-              2) Engineer useful features for our machine learning models by manipulating tabular data using pandas, numpy.
-            </p>
-            <p>
-              3) Creating three machine learning models: Logistic Regression, Random Forest, Multilayer Perceptron Neural Network
-            </p>
-            <p>
-              4) Using kaggle to score our models and measure progress.
-            </p>
-            </div>
+                <div class="col-md-12">
+                <div class="heading">
+                  <h2>Exploratory Analysis</h2>
+                    <h3>Here we explore our dataset and find out what we can about the dataset in general.
+                                        It's extremely beneficial to gain knowldge about the data you're working with in order to gain
+                                      somewhat of a domain knowledge. This will help us decide which variables to pick for our machine learning
+                                         model to learn. It goes without saying that variables more related to the target will yield better
+                                        learning/predictive results
+                    </h3>
+                </div>
+                <div>
+  
+  <pre>
+      # missing value check
+  # Define function
+  def check_missing_value(df):
+      # Returns how many values are missing in each column
+      missing_values = df.isnull().sum()
+      # Percentage
+      missing_values_percent = 100 * missing_values / len(df)
+      # Table
+      missing_values_table = pd.concat([missing_values, missing_values_percent], axis=1)
+      # renaming columns
+      missing_value_table_renamed_columns = missing_values_table.rename( columns={0: 'Missing values', 1: '% of total values'})
+      # return summary info
+      return missing_value_table_renamed_columns
+  
+  
+  
+  # Create a dataframe using the previously called function to explain the missing data
+  expl_missing_values_df = check_missing_value(apptrain)
+  
+  
+  # Creating a new dataframe called mvdf that shows the amount of missing values and the percentage and sorts it.
+  mvdf = expl_missing_values_df.loc[~(expl_missing_values_df==0).all(axis=1)]
+  mvdf.sort_values(by=['% of total values'], ascending=False).head(30)
+  </pre>
+  
+                               </div>
+                               <p class="text-center"> Above we define a function that that will allow us to take a look at a dataframes missing values.
+                               This is important for deciding how this will affect the machine learning model. We can choose to forego using the feature altogether,
+                                or we can choose to impute data using a specific strategy</p>
+              </div>
+  
           </div>
-          </div>
-        </div>
-      </section>
+  
+                  <div class="row">
+                      <div class="col-md-4">
+                          <img src="./images/missing_data.JPG" alt="">
+                      </div>
+                      <div class="col-md-8">
+                          <h1 class="text-center"> Results of the function </h1>
+                          <p class="text-center">
+                              The results of the function show we are missing over half of our data in certain columns.
+                              The machine learning library we are using does not accept NaN values to be fed into the
+                              machine learning algorithm. Therefore we must choose what to do with the missing data at runtime.
+                          </p>
+                      </div>
+                  </div>
+  
+                  <div class="row">
+                      <div class="col-md-12">
+                          <h1 class="text-center">Ratio of those who default on the loan vs those who don't</h1>
+                          <p>In our case it's helpful to know the ratio of those who default vs those who don't simply because
+                          it will allow us to look at our machine learning models tabular data and determine if it's a decent interpretation</p>
+  
+                      </div>
+                  </div>
+      </div>
+    </section>
 
 
+  <!--EXPLORATORY ANALYSIS END -->
 
-
-
-
-
-
-
-  <!--Skillset start -->
-  <section id="Explore" class="Explore">
-  	<div class="container">
-    	<div class="row">
-        	<div class="col-md-12">
-               <div class="heading">
-                <h2>Exploratory Analysis</h2>
-                <h3>Before creating our machine ywada yadayay</h3>
-               </div>
-            </div>
-        </div>
-    </div>  
-  </section>
-
-
-  <!--Skillset end -->
-
-
-
-  <!--portfolio start-->
-	<section class="LR" id="LR">
-            <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                           <div class="heading">
-                            <h2>Logistic Regression Model</h2>
-                            <h3>Before creating our machine ywada yadayay</h3>
-                           </div>
-                        </div>
-                    </div>
-                </div>  
-              </section>
-
-
-  <!--portfolio end-->
-
- <!--about me start-->
- <section class="RF" id="RF">
+<!-- Feautre Engineering -->
+    <section id="Feature" class="Feature">
         <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                       <div class="heading">
-                        <h2>Randome Forest</h2>
+          <div class="row">
+              <div class="col-md-12">
+                 <div class="heading">
+                  <h2>Feature Engineering</h2>
+                  <h3>Before creating our machine ywada yadayay</h3>
+                 </div>
+              </div>
+          </div>
+      </div>  
+    </section>
+<!--Feature Eng END -->
+
+  <!--LOGISTIC REGRESSION MODEL START-->
+
+    <section class="LR" id="LR">
+         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <h2>Logistic Regression Model</h2>
                         <h3>Before creating our machine ywada yadayay</h3>
-                       </div>
                     </div>
                 </div>
-            </div>  
-          </section>   
+            </div>
+        </div>  
+    </section>
+    
+  <!--LR END-->
+
+ <!--RANDOME FOREST START-->
+    <section class="RF" id="RF">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <h2>Random Forest</h2>
+                        <h3>Before creating our machine ywada yadayay</h3>
+                    </div>
+                </div>
+            </div>
+         </div>  
+    </section>   
 <!-- END ABOUT-->
 
 
 
 
   <!--MLP-->
-  <section class="MLP" id="MLP">
+    <section class="MLP" id="MLP">
         <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                       <div class="heading">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
                         <h2>Multilayer Perceptrion Neural Network</h2>
                         <h3>Before creating our machine ywada yadayay</h3>
-                       </div>
                     </div>
                 </div>
-            </div>  
-          </section>
+            </div>
+        </div>  
+    </section>
 
-  </div>
+</div>
 <!--wrapper end-->
 
 
 <!-- Footer -->
 
-<section class="footer" id="footer">
+<section class="footer .bg-secondary" id="footer">
+    <br></br>
         <p class="copy">&copy; 2018 | Bank Risk Analysis  </p>
         <p class="text-center"><a href="#wrapper" class="gototop"><i class="fa fa-chevron-up fa-2"></i></a></p>
 </section>

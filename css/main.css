@@ -221,11 +221,11 @@ header{
 	line-height:normal;
 	font-size: 60px;
 	font-weight:300;
-	color:#fff;
+	color:#fff !important;
 	letter-spacing:4px;
 }
 .bannerText h3{
-	color:#fff;
+	color:#fff !important;
 	font-size:55px;
 	line-height:normal;
 	font-weight:700;
@@ -1473,10 +1473,14 @@ ul.portfolioContainer li:hover span.hoverBox .linKed{
 
 /* Separately edited code MADE BY RITTER/TIFFANY */
 
-#LR{
+#Feature{
     background-color: white;
 }
 
-#MLP{
+#RF{
     background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #888089 !important;
 }
