@@ -129,21 +129,22 @@
 <!-- Exploratory Analysis -->
 <section id="Explore" class="Explore" style="margin-bottom: 40px;">
         <div class="container">
-  
+
           <div class="row">
               <div class="col-md-12">
                  <div class="heading">
                   <h2>Exploratory Analysis</h2>
-                  <h3>Here we explore our dataset and find out what we can about the dataset in general.
+                  <p>Here we explore our dataset and find out what we can about the dataset in general.
                                         It's extremely beneficial to gain knowldge about the data you're working with in order to gain
                                       somewhat of a domain knowledge. This will help us decide which variables to pick for our machine learning
-                                         model to learn. It goes without saying that variables more related to the target will yield better
+                                         model to learn. Variables more related to the target will yield better
                                         learning/predictive results
-                                  </h3>
+                                  </p>
                  </div>
-  
+
                                <div>
-  
+
+  <h1 class="text-center">Defining a function that will find missing values</h1>
   <pre>
       # missing value check
   # Define function
@@ -158,88 +159,93 @@
       missing_value_table_renamed_columns = missing_values_table.rename( columns={0: 'Missing values', 1: '% of total values'})
       # return summary info
       return missing_value_table_renamed_columns
-  
-  
-  
+
+
+
   # Create a dataframe using the previously called function to explain the missing data
   expl_missing_values_df = check_missing_value(apptrain)
-  
-  
+
+
   # Creating a new dataframe called mvdf that shows the amount of missing values and the percentage and sorts it.
   mvdf = expl_missing_values_df.loc[~(expl_missing_values_df==0).all(axis=1)]
   mvdf.sort_values(by=['% of total values'], ascending=False).head(30)
   </pre>
-  
+
                                </div>
-                               <p class="text-center"> Above we define a function that that will allow us to take a look at a dataframes missing values.
+                               <h3 class="text-center"> Above we define a function that that will allow us to take a look at a dataframes missing values.
                                This is important for deciding how this will affect the machine learning model. We can choose to forego using the feature altogether,
-                                or we can choose to impute data using a specific strategy</p>
+                                or we can choose to impute data using a specific strategy</h3>
               </div>
-  
+
           </div>
-  
-                  <div class="row">
+
+                  <div class="row" style="margin-bottom: 40px; margin-top: 40px;">
                       <div class="col-md-4">
                           <img src="./images/missing_data.JPG" alt="">
                       </div>
-                      <div class="col-md-8">
-                          <h1 class="text-center"> Results of the function </h1>
-                          <p class="text-center">
+                      <div class="col-md-8 align-middle">
+                          <h1 class="text-center align-middle"> Results of the function </h1>
+                          <h3 class="text-center align-middle">
                               The results of the function show we are missing over half of our data in certain columns.
                               The machine learning library we are using does not accept NaN values to be fed into the
                               machine learning algorithm. Therefore we must choose what to do with the missing data at runtime.
-                          </p>
+                          </h3>
                       </div>
                   </div>
-  
-                  <div class="row">
-                      <div class="col-md-12">
-                          <h1 class="text-center">Ratio of those who default on the loan vs those who don't</h1>
-                          <div class="text-center">
-                              <img src="./images/abilitytopay.JPG" alt="">
-                          </div>
-                          <p>In our case it's helpful to know the ratio of those who default vs those who don't simply because
-                          it will allow us to look at our machine learning models tabular data and determine if it's a decent interpretation</p>
-  
+
+
+                  <div class="row" style="margin-bottom: 40px;">
+                      <div class="col-md-4">
+                          <img src="./images/abilitytopay.JPG" alt="">
+                      </div>
+                      <div class="col-md-8 align-middle">
+                          <h1 class="text-center align-middle"> Target Balance </h1>
+                          <h3 class="text-center align-middle">
+                              In our case it's helpful to know the ratio of those who default vs those who don't simply because
+                              it will allow us to look at our machine learning models tabular data and determine if it's a decent interpretation
+                          </h3>
                       </div>
                   </div>
-  
+
                   <div class="row">
-                      <div class="col-md-12">
-                          <pre>
-  correlations = apptrain.corr()['TARGET'].sort_values()
-  print('Top 15 positive correlations', correlations.tail(15))
-  print('Top 15 negative correlations', correlations.head(15))
-                          </pre>
-                          <p>Using the above code yields the following results</p>
                           <div class="row">
+                            <h1 class="text-center">Correlation</h1>
                               <div class="col-md-8">
+                                <pre>
+correlations = apptrain.corr()['TARGET'].sort_values()
+print('Top 15 positive correlations', correlations.tail(15))
+print('Top 15 negative correlations', correlations.head(15))
+                                </pre>
+                                <p class="text-center">Using the above code yields the following results</p>
                                   <img src="./images/correlations.JPG" alt="">
                               </div>
                               <div class="col-md-4">
-                                  <p>The correlation will give us a nice starting point as to which features to look at.
+                                  <h3 class="py-auto">The correlation will give us a nice starting point as to which features to look at.
                                   Ranges from -1 to 1 indicate either a strongly positive correlation or negative correlation.
                                   Either positive or negative strength will be good for a machine learning model, however this makes a very
                                   large assumption that the data is linearly correlaed which may not be the case.
-  
+
                                   We can see from the low numbers, that we do not have a strong linear correlation. This is stil helpful in selecting
                                   features that have an extremely negligible correlation.
-                                  </p>
+                                  </h3>
                               </div>
                           </div>
-                      </div>
                   </div>
-  
-              <div class="row" style="margin-bottom: 40px;">
+
+              <div class="row" style="margin-bottom: 40px;margin-top: 40px;">
                   <div class="col-md-12">
                       <h1 class="text-center">Failure to repay binned by age</h1>
                       <div class="text-center">
                           <img src="./images/agesbinned.JPG" alt="">
                       </div>
+                      <div>
+                        <h3 class="text-center">Age as a variable can be closely related to the other features, we must be careful to avoid collinearity as that will add noise
+                          to our machine learning model. </h3>
+                      </div>
                   </div>
               </div>
-  
-  
+
+
       </div>
     </section>
 
@@ -285,24 +291,154 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <div clas s= "Display">
-                        <img src = "/images/LRpic.jpg">
+                    <div class= "Display">
+                            <img src = "/images/LRpic.jpg">
                     </div>
+                    <br></br>
                 </div>
                 <div class="col-md-6">
-                    <div class= "words">
-                        <h1>
-                            ALL THE WORDS ARE HERE
-                        </h1>
+                    <div>
+                        <h3>
+                                Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                        </h3>
                     </div>
             </div>
+            <br></br>
 
+            <!-- Prepare data-->
+
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading">
+                                <h2>Data Preparation for model</h2>
+                                <h3>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class= "Display">
+                                    <pre>
+# missing value check
+# Define function
+def check_missing_value(df):
+# Returns how many values are missing in each column
+missing_values = df.isnull().sum()
+# Percentage
+missing_values_percent = 100 * missing_values / len(df)
+# Table
+missing_values_table = pd.concat([missing_values, missing_values_percent], axis=1)
+# renaming columns
+missing_value_table_renamed_columns = missing_values_table.rename( columns={0: 'Missing values', 1: '% of total values'})
+# return summary info
+return missing_value_table_renamed_columns
+                                          
+ </pre>
+                            </div>
+                            <br></br>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <h3>
+                                        Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                                </h3>
+                            </div>
+                    </div>
+                <!-- LR Base Feature-->
+
+                <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="heading">
+                                    <h2>Logistic Regression Base Features</h2>
+                                    <h3>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class= "Display">
+                                    <pre>
+# missing value check
+# Define function
+def check_missing_value(df):
+# Returns how many values are missing in each column
+missing_values = df.isnull().sum()
+# Percentage
+missing_values_percent = 100 * missing_values / len(df)
+# Table
+missing_values_table = pd.concat([missing_values, missing_values_percent], axis=1)
+# renaming columns
+missing_value_table_renamed_columns = missing_values_table.rename( columns={0: 'Missing values', 1: '% of total values'})
+# return summary info
+return missing_value_table_renamed_columns
+</pre>
+                                </div>
+                                <br></br>
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                    <h3>
+                                            Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                                    </h3>
+                                </div>
+                        </div>
+
+                    <!-- Manually Engineered features-->
+
+                    <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="heading">
+                                        <h2>Manually Engineered Features</h2>
+                                        <h3>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class= "Display">
+                                        <pre>
+# missing value check
+# Define function
+def check_missing_value(df):
+# Returns how many values are missing in each column
+missing_values = df.isnull().sum()
+# Percentage
+missing_values_percent = 100 * missing_values / len(df)
+# Table
+missing_values_table = pd.concat([missing_values, missing_values_percent], axis=1)
+# renaming columns
+missing_value_table_renamed_columns = missing_values_table.rename( columns={0: 'Missing values', 1: '% of total values'})
+# return summary info
+return missing_value_table_renamed_columns
+                                        </pre>
+                                    </div>
+                                    <br></br>
+                                </div>
+                                <div class="col-md-6">
+                                    <div>
+                                        <h3>
+                                                Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                                        </h3>
+                                    </div>
+                            </div>
 
 
     </div>  
     </section>
     
-  <!--LR END-->
+  <!--LR END  !!!!!!!!!!!-->
+
+
+
 
  <!--RANDOME FOREST START-->
     <section class="RF" id="RF">
@@ -315,26 +451,221 @@
                     </div>
                 </div>
             </div>
-         </div>  
-    </section>   
-<!-- END ABOUT-->
+
+
+            <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            <h3>
+                                HELLOOO SO MANY CATS
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class= "Display">
+                            <img src = "/images/LRpic.jpg">
+                        </div>
+                        <br></br>
+                    </div>
+            </div>
+
+    
+                <!-- Prepare data-->
+    
+                <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="heading">
+                                    <h2>Data Preparation for model</h2>
+                                    <h3>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+            
+
+                        <div class="row">
+                                <div class="col-md-6">
+                                    <div>
+                                        <h3>
+                                            HELLOOO SO MANY CATS
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class= "Display">
+                                        <img src = "/images/LRpic.jpg">
+                                    </div>
+                                    <br></br>
+                                </div>
+                        </div>
+
+
+                <!-- THE SECOND STEP-->
+                <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="heading">
+                                    <h2>Logistic Regression Base Features</h2>
+                                    <h3>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+                                <div class="col-md-6">
+                                    <div>
+                                        <h3>
+                                            HELLOOO SO MANY CATS
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class= "Display">
+                                        <img src = "/images/LRpic.jpg">
+                                    </div>
+                                    <br></br>
+                                </div>
+                        </div>
+
+                        
+
+
+        </div>  
+        </section>
 
 
 
 
-  <!--MLP-->
+<!-- END RF -->
+
+
+
+
+  <!--MLP !!!!!!!!!!!!!!!!!-->
     <section class="MLP" id="MLP">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
-                        <h2>Multilayer Perceptrion Neural Network</h2>
+                        <h2>Multilayer Perceptron Neural Network</h2>
                         <h3>Before creating our machine ywada yadayay</h3>
                     </div>
                 </div>
             </div>
-        </div>  
-    </section>
+
+
+    <div class="row">
+            <div class="col-md-6">
+                <div class= "Display">
+                    <img src = "/images/LRpic.jpg">
+                </div>
+                <br></br>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h3>
+                            Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                    </h3>
+                </div>
+        </div>
+        <br></br>
+
+        <!-- Prepare data-->
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="heading">
+                            <h2>Data Preparation for model</h2>
+                            <h3>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class= "Display">
+                            <img src = "/images/LRpic.jpg">
+                        </div>
+                        <br></br>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <h3>
+                                    Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                            </h3>
+                        </div>
+                </div>
+            <!-- LR Base Feature-->
+
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading">
+                                <h2>Logistic Regression Base Features</h2>
+                                <h3>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class= "Display">
+                                <img src = "/images/LRpic.jpg">
+                            </div>
+                            <br></br>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <h3>
+                                        Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                                </h3>
+                            </div>
+                    </div>
+
+                <!-- Manually Engineered features-->
+
+                <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="heading">
+                                    <h2>Manually Engineered Features</h2>
+                                    <h3>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class= "Display">
+                                    <img src = "/images/LRpic.jpg">
+                                </div>
+                                <br></br>
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                    <h3>
+                                            Logistic regression is a machine learning model used to make predictions according to linear function of the input features. It can be used for both regression and classification, herein are utilizing it as a classifier.               
+                                    </h3>
+                                </div>
+                        </div>
+
+
+</div>  
+</section>
+
+<!-- MLP END !!!!!!!!!!!!!-->
+
+
+
+
+
+
 
 </div>
 <!--wrapper end-->
