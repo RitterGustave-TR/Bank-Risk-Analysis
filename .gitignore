@@ -11,3 +11,6 @@ previous_application.csv
 sample_submission.csv
 Manual_Features.csv
 Manual_Features_test.csv
+rf_important_features.csv
+rf_important_features-no-target.csv
+rftest_important_features.csv
