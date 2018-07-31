@@ -169,6 +169,15 @@ h9 {
 	font-weight:400;
 	margin:0px;
 }
+h10{
+	font-family: 'Montserrat', sans-serif;
+	font-size:20px;
+	line-height:30px;
+	padding-bottom:10px;
+	font-weight:400;
+	margin:0px;
+}	
+}
 .wrapper .media {
 	margin-top:0;
 }
