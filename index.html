@@ -569,10 +569,10 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                                     </div>
                                     <div class="col-md-4">
                                         <div>
-                                            <h9>
+                                            <h7>
                                                 We submitted two models using logistic regression. Of these two models, one was submitted untuned and with limited feature engineering.
                                                 The other we submitted tuned and using features that were engineered manually and selected via Random Forest feature importance.
-                                            </h9>
+                                            </h7>
                                         </div>
                                     </div>
                               </div>
@@ -599,8 +599,9 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
-                        <h2>Random Forest</h2>
-                        <h3>Random Forest is a great classifier to use in this particular instance. It is powerful and widely implemented
+                        <h5>Random Forest</h5>
+                        <h3>
+                            Random Forest is a great classifier to use in this particular instance. It is powerful and widely implemented
                            and with default settings performs well due to the ability to have many trees in the forest.
                            Having many trees in the forest prevents overfitting since some trees will have the same data.</h3>
                     </div>
@@ -611,13 +612,13 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
             <div class="row">
                     <div class="col-md-6">
                         <div>
-                            <h3>
+                            <h7>
                                 Random forests are great classifiers. They are comprised of an ensemble of Decision Trees, hence the name
                                 "Random Forest". The Random part of the name comes from the fact that that it searches for the best subset
                                 of features, meaning only a random subset of the features is taken into a consideration. A great quality of
                                 Random Forest that we took advantage of for other models is feature importance. We took what the forest considered
                                 important features and fed them back into the algorithm, as well as the Logistic Regression and MLP Neural Net models.
-                            </h3>
+                            </h7>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -631,11 +632,14 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
 
                 <!-- Model Tuning-->
 
-                <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="heading">
-                                    <h2>Model Tuning</h2>
+                <div class="row mx-auto">
+                        <div class="col-md-12">
+                            <div class="heading">
+                                <h2>
+
+                                </h2>
+                                <br></br>
+                                    <h2>Model Tuning <br></br></h2>
                                     <h3>
                                     </h3>
                                 </div>
@@ -646,11 +650,11 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
                         <div class="row">
                                 <div class="col-md-6">
                                     <div>
-                                        <h3>
+                                        <h7>
                                             For tuning the random forest, n_estimators was our biggest friend, and enemy. Increasing n_estimators increases the
                                             number of trees in the forest. This is beneficial to prevent the overfitting that happens in deep decision trees, however,
                                             computation time greatly increases. for our i7-4790k it took about 90 minutes to calculate 10000 trees with n_jobs parameter set to -1
-                                        </h3>
+                                        </h7>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -659,9 +663,10 @@ apptest_domain['DAYS_EMPLOYED_PERCENT'] = apptest_domain['DAYS_EMPLOYED'] / appt
 from sklearn.ensemble import RandomForestClassifier
 
 # Declare the model, tune parameters, fit data
+
 Random_Forest = RandomForestClassifier(n_estimators = 1000, verbose = 1, n_jobs = -1, max_features = 'auto')
 Random_Forest.fit(training_data, train_labels)
-                                        </pre>>
+                                        </pre>
                                     </div>
                                     <br></br>
                                 </div>
@@ -669,11 +674,14 @@ Random_Forest.fit(training_data, train_labels)
 
 
                 <!-- KAGGLE SCORE-->
-                <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="heading">
-                                    <h2>Kaggle Score</h2>
+                <div class="row mx-auto">
+                        <div class="col-md-12">
+                            <div class="heading">
+                                <h2>
+
+                                </h2>
+                                <br></br>
+                                    <h2>Kaggle Score<br></br></h2>
                                     <h3>
                                     </h3>
                                 </div>
@@ -683,10 +691,10 @@ Random_Forest.fit(training_data, train_labels)
                         <div class="row">
                                 <div class="col-md-4">
                                     <div>
-                                        <h3>
+                                        <h7>
                                             Our Random Forest model scored a high default of .678 with just the base features and very few trees. We strongly
                                             believe that if better hardware was available we could increase this score with minimal feature engineering.
-                                        </h3>
+                                        </h7>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -720,7 +728,7 @@ Random_Forest.fit(training_data, train_labels)
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
-                        <h2>Multilayer Perceptron Neural Network</h2>
+                        <h5>Multilayer Perceptron Neural Network</h5>
                         <h3>The Multilayer Perceptron Neural Network is a part of Scikit Learns neural network library</h3>
                     </div>
                 </div>
@@ -736,11 +744,11 @@ Random_Forest.fit(training_data, train_labels)
                     </div>
                     <div class="col-md-6">
                         <div>
-                            <h3>
+                            <h7>
                               The multilayer perceptron neural network is efficient on large datasets, can build very complex models, and has the most parameters for tuning.
                               Having so many parameters does mean there's more chance for a bad configuration. Using this model we had to take scale into account, and although
                               we believe random forest is our strongest model, the Multilayer Perceptron Neural Network does boast a high base score.
-                            </h3>
+                            </h7>
                         </div>
                 </div>
                 <br></br>
@@ -749,11 +757,14 @@ Random_Forest.fit(training_data, train_labels)
 
                     <!-- MODEL TUNING-->
 
-                    <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="heading">
-                                        <h2>Model Tuning</h2>
+                    <div class="row mx-auto">
+                            <div class="col-md-12">
+                                <div class="heading">
+                                    <h2>
+    
+                                    </h2>
+                                    <br></br>
+                                        <h2>Model Tuning<br></br></h2>
                                         <h3>
                                         </h3>
                                     </div>
@@ -785,22 +796,25 @@ mlp.fit(fe_training_data, train_labels)
                                 </div>
                                 <div class="col-md-6">
                                     <div>
-                                        <h3>
+                                        <h7>
                                           To tune our Neural Network, we chose 1000 iterations, although we chose many iterations training loss did not improve significantly
                                           over 2 epochs and so training was cut short. we chose rectified linear units as our acivation function since we scaled our data from
                                           zero to one, this function made sense. Our learning rate was set to adaptive simply because it self monitors the training to be more or less
                                           aggresive based on training loss.
-                                        </h3>
+                                        </h7>
                                     </div>
                             </div>
 
                         <!-- KAGGLE SCORE-->
 
-                        <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="heading">
-                                            <h2>Kaggle Score</h2>
+                        <div class="row mx-auto">
+                                <div class="col-md-12">
+                                    <div class="heading">
+                                        <h2>
+        
+                                        </h2>
+                                        <br></br>
+                                            <h2>Kaggle Score<br></br></h2>
                                             <h3>
                                             </h3>
                                         </div>
@@ -816,11 +830,11 @@ mlp.fit(fe_training_data, train_labels)
                                     </div>
                                     <div class="col-md-4">
                                         <div>
-                                            <h3>
+                                            <h7>
                                                 With feature engineering, the MLP Neural Network gave us our highest kaggle public score. This is not surprising due to the fact
                                                 that we had so many feature and our observations were complex. However, we still believe that with even more feature engineering,
                                                 and better hardware, Random Forest would edge out the Neural Network.
-                                            </h3>
+                                            </h7>
                                         </div>
                                 </div>
 
